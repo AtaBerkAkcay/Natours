@@ -1,0 +1,401 @@
+.description-section {
+  padding: calc(20vh + 10rem) 8rem 30rem;
+  background-color: $light-gray--1;
+  transform: translateY(-20vh);
+  text-align: center;
+
+  @include r(1270px) {
+    padding: calc(20vh + 10rem) 8rem 25rem;
+  }
+
+  @include r(1170px) {
+    padding: calc(20vh + 10rem) 8rem 50rem;
+  }
+
+  @include r(970px) {
+    text-align: left;
+  } 
+
+  @include r(470px) {
+    padding: calc(20vh + 10rem) 6rem 50rem;
+  } 
+
+  @include r(420px) {
+    padding: calc(20vh + 10rem) 4rem 50rem;
+  } 
+
+  @include r(370px) {
+    padding: calc(20vh + 10rem) 2rem 50rem;
+  } 
+
+  h2 {
+    @include r(920px) {
+      text-align: center;
+    }
+
+    @include r(570px) {
+      text-align: left;
+    }
+
+    @include r(470px) {
+      text-align: center;
+    }
+
+    @include r(420px) {
+      text-align: left;
+    }
+  }
+}
+
+.description-section-container {
+  display: flex;
+  max-width: 114rem;
+  gap: 8rem;
+  text-align: left;
+  margin: 0 auto;
+  
+  @include r(1170px) {
+    flex-direction: column;
+    
+  }
+  
+  @include r(920px) {
+    max-width: 50rem;
+    
+  }
+
+}
+
+.description-container {
+  flex: 1;
+
+  @include r(1170px) {
+    display: flex;
+    gap: 5rem;
+    position: relative;
+  }
+
+  @include r(970px) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  p {
+    margin-bottom: 3rem;
+  }
+}
+
+.composition-container {
+  flex: 1;
+  position: relative;
+  align-self: flex-start;
+  
+
+  &:hover .composition-image:not(:hover) {
+    transform: scale(0.95);
+    box-shadow: 0 1rem 1.75rem rgba(#000, 0.3);
+
+    @include r(1270px) {
+      transform: scale(1);
+      box-shadow: 0 1rem 2rem rgba(#000, 0.3);
+    }
+  }
+
+  
+}
+
+.composition-image {
+  position: absolute;
+  width: 30rem;
+  transition: all 0.2s;
+  box-shadow: 0 1rem 2rem rgba(#000, 0.3);
+
+  @include r(920px) {
+    width: 25rem;
+  }
+
+  @include r(470px) {
+    width: 22.5rem;
+  }
+
+  &--1 {
+    top: -2rem;
+
+    @include r(1370px) {
+      left: -2rem;
+    }
+
+    @include r(1270px) {
+      z-index: -1;
+    }
+
+    @include r(1170px) {
+      top: 0;
+      left: 35rem;
+      z-index: 1;
+    }
+
+    @include r(1120px) {
+      left: 32.5rem;
+    }
+
+    @include r(1070px) {
+      left: 30rem;
+    }
+
+    @include r(1020px) {
+      left: 27.5rem;
+    }
+
+    @include r(970px) {
+      left: 25rem;
+    }
+
+    @include r(920px) {
+      left: 22.5rem;
+    }
+
+    @include r(920px) {
+      left: 12.5rem;
+      
+    }
+
+    @include r(570px) {
+      left: 10rem;
+      
+    }
+  }
+
+  &--2 {
+    top: 2rem;
+    left: 25rem;
+
+    @include r(1370px) {
+      left: 23rem;
+    }
+
+    @include r(1270px) {
+      z-index: 0;
+    }
+
+    @include r(1170px) {
+      left: 10rem;
+      z-index: -1;
+    }
+    
+    @include r(1120px) {
+      left: 7.5rem;
+    }
+
+    @include r(1070px) {
+      left: 5rem;
+    }
+
+    @include r(1020px) {
+      left: 2.5rem;
+    }
+
+    @include r(970px) {
+      left: 0;
+    }
+
+    @include r(920px) {
+      left: 2.5rem;
+      top: 5rem;
+    }
+
+    @include r(570px) {
+      left: 0;
+    }
+  }
+
+  &--3 {
+    top: 10rem;
+    left: 10rem;
+
+    @include r(1370px) {
+      left: 8rem;
+    }
+
+    @include r(1270px) {
+      z-index: 1;
+    }
+
+    @include r(1170px) {
+      top: 2.5rem;
+      left: 60rem;
+      z-index: -1;
+    }
+    
+    @include r(1120px) {
+      left: 57.5rem;
+    }
+
+    @include r(1070px) {
+      left: 55rem;
+    }
+
+    @include r(1020px) {
+      left: 52.5rem;
+    }
+
+    @include r(970px) {
+      left: 50rem;
+    }
+
+    @include r(920px) {
+      left: 45rem;
+    }
+
+    @include r(920px) {
+      left: 22.5rem;
+      top: 7.5rem;
+    }
+
+    @include r(570px) {
+      left: 20rem;
+      
+    }
+  }
+
+  &:hover {
+    z-index: 1;
+    transform: scale(1.05);
+    outline: 1.5rem solid $main-color;
+    outline-offset: 1.8rem;
+    box-shadow: 0 1.5rem 3rem rgba(#000, 0.3);
+
+    @include r(1270px) {
+      
+      transform: scale(1);
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#000, 0.3);
+    }
+  } 
+
+  // Removing the hover effect from two of the composition images
+  &--1:hover {
+    @include r(1270px) {
+      z-index: -1;
+    }
+
+    @include r(1170px) {
+      z-index: 1;
+    }
+  }
+
+  &--2:hover {
+    @include r(1270px) {
+      z-index: 0;
+    }
+
+    @include r(1170px) {
+      z-index: -1;
+    }
+  }
+
+  &--3:hover {
+    @include r(1170px) {
+      z-index: -1;
+    }
+  }
+}
+
+
+.features-section {
+  background-image: linear-gradient(to right bottom, rgba($main-color--light, 0.8), rgba($main-color--dark, 0.8)), url(../img/nat-4.jpg);
+  padding: 20rem 0;
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -25rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.tours-section {
+  padding: 27.5rem 8rem 12rem;
+  background-color: $light-gray--1;
+  text-align: center;
+  margin-top: -9rem;  
+
+  @include r(1270px) {
+    padding: 25rem 8rem 12rem;
+  }
+
+  @include r(470px) {
+    padding: 25rem 6rem 12rem;
+  }
+
+  @include r(470px) {
+    padding: 25rem 4rem 12rem;
+  }
+
+  @include r(470px) {
+    padding: 25rem 2rem 12rem;
+  }
+}
+
+.tour-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+
+  @include r(1370px) {
+    column-gap: 6rem;
+  }
+
+  @include r(1320px) {
+    column-gap: 4.5rem;
+  }
+
+  @include r(1220px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+
+  }
+  @include r(920px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.testimonials-section {
+  padding: 12rem 8rem;
+  position: relative;
+
+  @include r(470px) {
+    padding: 12rem 6rem;
+  }
+
+  @include r(420px) {
+    padding: 12rem 4rem;
+  }
+
+  @include r(370px) {
+    padding: 12rem 2rem;
+  }
+
+}
+
+.cta-section {
+  background-image: linear-gradient(to right bottom, $main-color--light, $main-color--dark);
+  padding: 12rem 0;
+
+  @include r(470px) {
+    padding: 12rem 6rem;
+  }
+
+  @include r(420px) {
+    padding: 12rem 4rem;
+  }
+
+  @include r(370px) {
+    padding: 12rem 2rem;
+  }
+}

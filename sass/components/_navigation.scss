@@ -1,0 +1,226 @@
+.navigation {
+
+  &__checkbox {
+    display: none;
+    &:checked {
+      
+      // The green background expands when the menu icon is clicked
+      & ~ .navigation__background {
+        transform: scale(45);
+      }
+
+      // The menu icon changes to form a cross icon when the navigation is open
+      & + .navigation__icon {
+        .navigation__icon-line--1 {
+          transform: translate(-50%, -50%) rotate(135deg);
+          
+        }
+
+        .navigation__icon-line--2 {
+          display: none;
+
+        }
+
+        .navigation__icon-line--3 {
+          transform: translate(-50%, -50%) rotate(-135deg);
+        }
+      }
+
+      // The navigation appears when menu icon is clicked
+
+      & ~ .navigation__link-container {
+        visibility: visible;
+        width: 100%;
+
+        .navigation__links {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  &__icon {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 1rem 2rem rgba(#000, 0.15);
+    position: fixed;
+    top: 5rem;
+    right: 7rem;
+    z-index: 4;
+
+    @include r(520px) {
+      top: 3rem;
+      right: 5rem;
+    }
+
+    @include r(420px) {
+      right: 4rem;
+    }
+
+    // The menu icon expands vertically when hovered
+    &:hover {
+
+      .navigation__icon-line--1 {
+        transform: translate(-50%, -600%);
+
+        @include r(1270px) {
+          transform: translate(-50%, -500%);
+        } 
+      }
+
+      .navigation__icon-line--3 {
+        transform: translate(-50%, 500%);
+
+        @include r(1270px) {
+          transform: translate(-50%, 400%);
+        } 
+      }
+    }
+
+  }
+
+  &__background {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    background-image: radial-gradient($main-color--light, $main-color--dark);
+    position: fixed;
+    top: 5rem;
+    right: 7rem;
+    z-index: 2;
+    transition: all 0.4s ease-out;
+    
+    @include r(1270px) {
+      transition: all 0.3s ease-out;
+
+    }
+
+    @include r(520px) {
+      top: 3rem;
+      right: 5rem;
+    }
+
+    @include r(420px) {
+      right: 4rem;
+    }
+  }
+
+  &__icon-line {
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: $dark-gray--3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.3s;
+    
+    &--1 {
+      transform: translate(-50%, -500%);
+
+    }
+
+    &--2 {
+      transform: translate(-50%, -50%);
+
+    }
+    &--3 {
+      transform: translate(-50%, 400%);
+
+    }
+  }
+
+  &__link-container {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 45%;
+    visibility: hidden;
+    height: 100vh;
+    z-index: 3;
+    transition: width 0.6s cubic-bezier(0,.41,.49,1.41);
+
+    @include r(1370px) {
+      transition: width 0.4s cubic-bezier(0,.41,.49,1.41);
+
+    }
+
+    @include r(870px) {
+      width: 55%;
+    }
+
+    @include r(820px) {
+      width: 65%;
+    }
+
+    @include r(720px) {
+      width: 80%;
+    }
+
+    @include r(720px) {
+      width: 85%;
+    }
+
+    @include r(670px) {
+      width: 90%;
+    }
+
+    @include r(620px) {
+      width: 100%;
+    }
+  }
+  
+  &__links {
+    @include absoluteCentering;
+    list-style: none;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.1s cubic-bezier(.93,.07,.92,.43);
+    
+    @include r(1370px) {
+      transition: opacity 0.08s cubic-bezier(.93,.07,.92,.43);
+    }
+
+    @include r(620px) {
+      transition: opacity 0.3s;
+    }
+
+    @include r(570px) {
+      width: 100%;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    .navigation__link {
+      &:link, &:visited {
+        display: inline-block;
+        padding: 1.5rem 2.5rem;
+        text-decoration: none;
+        color: white;
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        transition: all 0.4s;
+        background-image: linear-gradient(120deg, transparent 50%, white 50%);
+        background-size: 220%;
+      }
+      
+      &:hover, &:active {
+        background-position: 100%;
+        color: $main-color;
+        transform: translateX(1rem);
+      }
+
+      span {
+        margin-right: 1.6rem;
+      }
+    }
+
+  }
+}

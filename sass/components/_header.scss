@@ -1,0 +1,100 @@
+header {
+  background-image: linear-gradient(to right bottom, rgba($main-color--light, 0.8), rgba($main-color--dark, 0.8)) , url(../img/hero.jpg);
+  background-size: cover;
+  height: 95vh;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  z-index: 1;
+  
+  @include r(1020px) {
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+  }
+
+  @include r(920px) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 4rem 0;
+
+  &__logo {
+    width: 8rem;
+
+  }
+}
+
+.header-content {
+    @include absoluteCentering;
+    top: 40%;
+    text-align: center;
+    width: 100%;
+  }
+
+.main-heading {
+  color: white;
+  margin-bottom: 6rem;
+
+  &--top {
+    display: block;
+    font-weight: 400;
+    font-size: 7rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5rem;
+    margin-bottom: 2rem;
+    animation-name: main-heading--top-animation;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    
+    @include r(1370px) {
+      font-size: 6rem;
+    }
+    
+    @include r(1020px) {
+      font-size: 5rem;
+    }
+    
+    @include r(420px) {
+      letter-spacing: 2rem;
+    }
+    
+    @include r(370px) {
+      letter-spacing: 1.5rem;
+    }
+  }
+
+  &--bottom {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    animation: main-heading--bottom-animation 1.2s ease-out;
+    
+    @include r(1370px) {
+      font-size: 1.8rem;
+    }
+    
+    @include r(1020px) {
+      font-size: 1.6rem;
+    }
+    
+    @include r(720px) {
+      letter-spacing: 1.5rem;
+    }
+
+    @include r(420px) {
+      letter-spacing: 1rem;
+    }
+
+    @include r(370px) {
+      letter-spacing: 0.75rem;
+    }
+  }
+
+
+}

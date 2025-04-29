@@ -1,0 +1,30 @@
+.second-button {
+  
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid $main-color;
+    color: $main-color;
+    transition: all 0.3s;
+
+  }
+
+  &:hover, &:active {
+    border-bottom: 1px solid transparent;
+
+    @include r(1270px) {
+      border-bottom: 1px solid $main-color;
+    }
+  }
+
+  &--responsive {
+    @include r(1170px) {
+      position: absolute;
+      bottom: -2rem;
+    }
+  }
+  
+}

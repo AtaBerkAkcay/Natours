@@ -1,0 +1,93 @@
+.button {
+  &,
+  &:link,
+  &:visited {
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.07rem;
+    padding: 2rem 4rem;
+    border-radius: 100rem;
+    font-size: 1.5rem;
+    transition: all 0.2s;
+    position: relative;
+
+    // For <button> elements
+    border: none;
+    
+    @include r(1020px) {
+      padding: 1.6rem 3.2rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+
+    @include r(1270px) {
+      transform: translateY(0) !important; 
+      box-shadow: none !important;
+
+    }
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+
+      
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1.25rem rgba(#000, 0.2);
+
+  }
+
+  &::after {
+  content: "";
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100rem;
+  z-index: -1;
+  transition: all 0.4s;
+
+  @include r(1270px) {
+    display: none;
+  }
+}
+
+
+
+  &--white {
+    color: $dark-gray--1;
+    background-color: white;
+    
+    &::after {
+        background-color: inherit;
+
+      }
+  }
+
+  &--green {
+    color: white;
+    background-color: $main-color;
+
+    &::after {
+      background-color: inherit;
+    }
+  }
+
+  &--animated {
+    animation-name: button--animated-animation;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: backwards
+  }
+}

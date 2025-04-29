@@ -1,0 +1,117 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include r(1270px) {
+    font-size: 61%;
+  }
+
+  @include r(1230px) {
+    font-size: 59.5%;
+  }
+
+  @include r(1120px) {
+    font-size: 58%;
+  }
+
+  @include r(1020px) {
+    font-size: 56.5%;
+  }
+
+  @include r(770px) {
+    font-size: 55%;
+  }
+
+  @include r(720px) {
+    font-size: 53.5%;
+  }
+
+  @include r(670px) {
+    font-size: 52%;
+  }
+
+  @include r(620px) {
+    font-size: 50.5%;
+  }
+
+  @include r(570px) {
+    font-size: 49%;
+  }
+
+  @include r(470px) {
+    font-size: 47.5%;
+  }
+
+  @include r(420px) {
+    font-size: 46%;
+  }
+
+  @include r(370px) {
+    font-size: 43%;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: $dark-gray--1;
+  padding: 3rem;
+
+  @include r(520px) {
+    padding: 0;
+  }
+
+}
+
+.secondary-heading {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, $main-color--light, $main-color--dark);
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  margin-bottom: 8rem;
+
+  @include r(1020px) {
+    font-size: 3.2rem;
+  }
+
+  @include r(970px) {
+    margin-bottom: 6rem;
+  }
+
+  @include r(920px) {
+    font-size: 3rem;
+  }
+}
+
+.tertiary-heading {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  
+    font-size: 1.6rem;
+    line-height: 1.6;
+  
+}
+
+::selection {
+  background-color: $main-color;
+  color: white;
+}
+
+
+
+
+
+
+

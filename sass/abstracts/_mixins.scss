@@ -1,0 +1,12 @@
+@mixin absoluteCentering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin r($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
